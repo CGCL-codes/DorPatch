@@ -1,6 +1,6 @@
 # DorPatch: Distributed and Occlusion-Robust Adversarial Patch to Evade Certifiable Defenses
 
-By Chaoxiang He, Bin Benjamin Zhu
+By Chaoxiang He and Bin Benjamin Zhu
 
 This repository contains the code for the paper "DorPatch: Distributed and Occlusion-Robust Adversarial Patch to Evade Certifiable Defenses", published at the Network and Distributed System Security Symposium (NDSS) 2024.
 
@@ -37,9 +37,11 @@ $dataset_directory
    `$ conda activate pytorch_dorpatch`
 
 2. Prepare the dataset and pre-trained model.
-   - Download the corresponding pretrained model (e.g., 'resnetv2_50x1_bit_distilled_cutout2_128_imagenet.pth' for ImageNet from [PatchCleanser](https://github.com/inspire-group/PatchCleanser)) from [here](https://drive.google.com/drive/folders/10H1HIhJ6V8sO99x8g4WxtTahCrTkyTCF) and put it into "pretrained_models/$dataset/". $dataset is a variable referring to a dataset (e.g., $dataset can be set to 'imagenet' for ImageNet dataset).
+    - Download the corresponding dataset (e.g., download the validation set of ImageNet from [here](https://www.image-net.org/data/ILSVRC/2012/ILSVRC2012_img_val.tar)) and prepare the data to the directory `$dataset_directory`, where `$dataset_directory` is a variable referring to the path that will store all datasets (e.g., if $dataset_directory = './data', then the resulting validation set of ImageNet is prepared to the directory './data/imagenet/val').
+    
+    - Download the corresponding pretrained model (e.g., 'resnetv2_50x1_bit_distilled_cutout2_128_imagenet.pth' for ImageNet from [here](https://drive.google.com/drive/folders/10H1HIhJ6V8sO99x8g4WxtTahCrTkyTCF), provided by [PatchCleanser](https://github.com/inspire-group/PatchCleanser)) and put it into "pretrained_models/$dataset/", where $dataset is a variable referring to the directory name of the corresponding dataset (e.g., $dataset = 'imagenet' for the ImageNet model dataset to match the above directory name of the ImageNet dataset in $dataset_directory).
 
-   - Download the corresponding dataset (e.g., download the validation set of ImageNet from [here](https://www.image-net.org/data/ILSVRC/2012/ILSVRC2012_img_val.tar)) and prepare the data in the directory `$dataset_directory`. `$dataset_directory` could be an arbitrary directory that stores datasets and is shared for data-reusing (e.g., the validation set of ImageNet is prepared in '/data/imagenet/val', `$dataset_directory` should be set to '/data').
+  
 3. Run the code with
    `$ python main.py --data_dir $dataset_directory`
 
