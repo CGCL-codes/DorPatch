@@ -4,6 +4,28 @@ By Chaoxiang He, Bin Benjamin Zhu
 
 This repository contains the code for the paper "DorPatch: Distributed and Occlusion-Robust Adversarial Patch to Evade Certifiable Defenses", published at the Network and Distributed System Security Symposium (NDSS) 2024.
 
+## Files
+
+```
+├── README.md                        #this file 
+├── requirement.txt                  #required package
+| 
+├── main.py                          #entrance to run the code
+├── utils.py                         #utils for the code
+├── attack.py                        #code for attacking methods (e.g., DorPatch)
+| 
+├── defenses
+|   └── PatchCleanser.py             #code for the SOTA certifiable defense of PatchCleanser
+|
+├── pretrained_models
+|   └──imagenet                      #model directory for imagenet
+|
+└── results                          #directory for generated results
+
+$dataset_directory
+    └──imagenet                      #data directory for imagenet
+```
+
 ## Instructions to Run the Code
 
 1. Create the Python environment using conda from `requirements.txt`:
